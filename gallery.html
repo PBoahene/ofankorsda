@@ -1,0 +1,134 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Gallery - Ofankor Seventh-day Adventist Church</title>
+    <link rel="stylesheet" href="modern-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="SDA-PICS/badge-script.png" alt="Ofankor SDA Church Logo" class="circular-logo">
+            </div>
+            <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+                <span class="sr-only">Menu</span>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <nav class="nav" id="primary-navigation">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="events.html">EVENTS</a></li>
+                    <li><a href="gallery.html" class="active">GALLERY</a></li>
+                    <li><a href="programs.html">OUR PROGRAMMES</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                    <li><a href="news.html">NEWS</a></li>
+                    <li><a href="suppourt.html" class="support-btn">SUPPORT US</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+        <!-- Gallery -->
+        <section class="gallery-section">
+            <div class="container">
+                <h1>Our Gallery</h1>
+                <div class="gallery-grid">
+                    <div class="gallery-item"><img src="SDA-PICS/after%20church.jpg" alt="After Church"></div>
+                    <div class="gallery-item"><img src="SDA-PICS/After%20service.jpg" alt="After Service"></div>
+                    <div class="gallery-item"><img src="SDA-PICS/Aban.jpg" alt="Aban"></div>
+                    <div class="gallery-item"><img src="SDA-PICS/geng.jpg" alt="Geng"></div>
+                    <div class="gallery-item"><img src="SDA-PICS/Y%20choir.jpg" alt="Youth Choir"></div>
+                    <div class="gallery-item"><img src="SDA-PICS/Youth.jpg" alt="Youth"></div>
+                    <div class="gallery-item"><img src="SDA-PICS/Singing-Group.png" alt="Singing Group"></div>
+                    <div class="gallery-item"><img src="SDA-PICS/Twins.jpg" alt="Twins"></div>
+                    <div class="gallery-item"><img src="SDA-PICS/Edurance.jpg" alt="Edurance"></div>
+                    <div class="gallery-item"><img src="SDA-PICS/mike.jpg" alt="Mike"></div>
+                    <div class="gallery-item"><img src="SDA-PICS/NT.jpg" alt="Nathan Tri"></div>
+                    <div class="gallery-item"><img src="SDA-PICS/Ish.jpg" alt="Ish"></div>
+                    <div class="gallery-item"><img src="SDA-PICS/waves.jpg" alt="Waves"></div>
+                </div>
+            </div>
+        </section>
+    <style>
+    .gallery-section h1 {
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 2.5rem;
+        color: #008000;
+    }
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.5rem;
+        padding: 2rem 0;
+    }
+    .gallery-item {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 220px;
+    }
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+        transition: transform 0.3s;
+    }
+    .gallery-item img:hover {
+        transform: scale(1.05);
+    }
+    @media (max-width: 600px) {
+        .gallery-grid {
+            grid-template-columns: 1fr;
+        }
+        .gallery-item {
+            height: 180px;
+        }
+    }
+    </style>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>Ofankor SDA Church is committed to spreading the gospel and serving our community through Christ-centered ministry.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ofankor Seventh-day Adventist Church. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="navigation.js"></script>
+</body>
+</html>

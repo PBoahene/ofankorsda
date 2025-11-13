@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Us | Ofankor Seventh-day Adventist Church</title>
+    <link rel="stylesheet" href="modern-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .hero-support {
+            /* Green overlay over NT.jpg */
+            background-image: linear-gradient(rgba(0,128,0,0.6), rgba(0,128,0,0.6)), url('SDA-PICS/NT.jpg');
+            background-size: cover, cover;
+            background-position: center center, center center;
+            background-repeat: no-repeat, no-repeat;
+            color: #fff;
+            padding: 4rem 0 2rem 0;
+            text-align: center;
+            margin-top: 90px; /* Add this line to push hero below header */
+        }
+        .hero-support h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        .hero-support p {
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .support-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .support-card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(0, 128, 0, 0.07);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: box-shadow 0.2s;
+        }
+        .support-card i {
+            font-size: 2.5rem;
+            color: #008000;
+            margin-bottom: 1rem;
+        }
+        .support-card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        .donation-details {
+            background: #eafaf1;
+            border-radius: 10px;
+            padding: 2rem 1.5rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        .donation-details h2 {
+            color: #008000;
+            margin-bottom: 1rem;
+        }
+        .donation-details .bank-info {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+        .donation-details .btn {
+            background: #008000;
+            color: #fff;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+            transition: background 0.2s;
+        }
+        .donation-details .btn:hover {
+            background: #006400;
+        }
+        .thank-you {
+            text-align: center;
+            margin: 2.5rem 0 1.5rem 0;
+            font-size: 1.1rem;
+            color: #008000;
+            font-weight: 500;
+        }
+        /* Highlight Support Us nav link */
+        .nav ul li .support-btn,
+        .nav ul li a.active {
+            background: #008000;
+            color: #fff !important;
+            border-radius: 4px;
+            padding: 0.5em 1em;
+        }
+        /* Desktop-only styles for support CTA */
+        .support-cta-desktop {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2.5rem 0 0 0;
+        }
+        /* mobile CTA hidden by default; shown via media query */
+        .support-cta-mobile {
+            display: none;
+        }
+        .support-question {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #008000;
+        }
+        .open-support-modal-btn {
+            background: #008000;
+            color: #fff;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .open-support-modal-btn:hover {
+            background: #006400;
+        }
+        /* Modal Styles */
+        .support-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0; top: 0; width: 100vw; height: 100vh;
+            background: rgba(0,0,0,0.25); /* neutral dark overlay */
+            align-items: center;
+            justify-content: center;
+        }
+        .support-modal.active {
+            display: flex;
+        }
+        .modal-content {
+            background: #f6fff6; /* very light green */
+            border-radius: 12px;
+            padding: 2rem 1.5rem;
+            max-width: 400px;
+            width: 90vw;
+            position: relative;
+            box-shadow: 0 4px 24px rgba(0,128,0,0.18);
+            border: 2px solid #008000;
+        }
+        .modal-content h2 {
+            color: #008000;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-align: center;
+        }
+        .close-modal {
+            position: absolute;
+            top: 1rem; right: 1rem;
+            font-size: 1.5rem;
+            color: #008000;
+            cursor: pointer;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+        .close-modal:hover {
+            color: #006400;
+        }
+        #support-form label {
+            display: block;
+            margin-top: 1rem;
+            font-weight: 500;
+            color: #008000;
+        }
+        #support-form input, #support-form select, #support-form textarea {
+            width: 100%;
+            padding: 0.6rem;
+            margin-top: 0.3rem;
+            border: 1.5px solid #008000;
+            border-radius: 4px;
+            font-size: 1rem;
+            box-sizing: border-box;
+            background: #fff;
+            color: #222;
+        }
+        #support-form input:focus, #support-form select:focus, #support-form textarea:focus {
+            outline: none;
+            border-color: #006400;
+            box-shadow: 0 0 0 2px #c6f7c6;
+        }
+        #support-form .btn {
+            margin-top: 1.5rem;
+            width: 100%;
+            background: #008000;
+            color: #fff;
+            border: none;
+            padding: 0.7rem 0;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        #support-form .btn:hover {
+            background: #006400;
+        }
+        @media (max-width: 500px) {
+            .modal-content {
+                padding: 1rem 0.5rem;
+            }
+            #support-form label {
+                margin-top: 0.7rem;
+            }
+        }
+        @media (max-width: 900px) {
+            .support-cta-desktop {
+                display: none;
+            }
+            /* Mobile CTA — centered and button below text */
+            .support-cta-mobile {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin: 2rem 0 0 0;
+                width: 100%;
+                text-align: center;
+            }
+            .support-cta-mobile .support-question {
+                text-align: center;
+                width: 100%;
+                margin-bottom: 0.7rem;
+                display: block;
+            }
+            .support-cta-mobile .open-support-modal-btn {
+                display: block;
+                margin: 0.7rem auto 0 auto;
+                width: 80%;
+                max-width: 250px;
+            }
+        }
+        @media (max-width: 700px) {
+            .support-options {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header (same as index.html) -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="SDA-PICS/badge-script.png" alt="Ofankor SDA Church Logo" class="circular-logo">
+            </div>
+            <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+                <span class="sr-only">Menu</span>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <nav class="nav" id="primary-navigation">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="events.html">EVENTS</a></li>
+                    <li><a href="gallery.html">GALLERY</a></li>
+                    <li><a href="programs.html">OUR PROGRAMMES</a></li>
+                    <li><a href="index.html#contact">CONTACT</a></li>
+                    <li><a href="news.html">NEWS</a></li>
+                    <li><a href="#" class="support-btn active">SUPPORT US</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+        <!-- ...existing header content... -->
+
+    <!-- Hero Section -->
+    <section class="hero-support">
+        <h1>Support Our Mission</h1>
+        <p>Your generosity and involvement help us share hope, serve our community, and grow together in Christ. Join us in making a difference!</p>
+    </section>
+
+    <!-- Support Options -->
+    <section class="container">
+        <div class="support-options">
+            <div class="support-card">
+                <i class="fas fa-hand-holding-heart"></i>
+                <h3>Give a Donation</h3>
+                <p>Support our ministry financially with a one-time or recurring gift. Every contribution helps us reach more lives.</p>
+            </div>
+            <div class="support-card">
+                <i class="fas fa-users"></i>
+                <h3>Volunteer</h3>
+                <p>Join our service teams—music, teaching, outreach, and more. Your time and talents are a blessing to our church family.</p>
+            </div>
+            <div class="support-card">
+                <i class="fas fa-praying-hands"></i>
+                <h3>Pray With Us</h3>
+                <p>Partner with us in prayer for our church, our community, and the world. Prayer moves mountains!</p>
+            </div>
+            <div class="support-card">
+                <i class="fas fa-share-alt"></i>
+                <h3>Spread the Word</h3>
+                <p>Share our events and messages online. Help us reach more people with the good news of Jesus.</p>
+            </div>
+        </div>
+        <!-- Support CTA: Mobile (under cards) and Desktop -->
+        <div class="support-cta-mobile">
+            <span class="support-question">How would you like to support our mission?</span>
+            <button class="open-support-modal-btn">Let Us Know</button>
+        </div>
+        <div class="support-cta-desktop">
+            <span class="support-question">How would you like to support our mission?</span>
+            <button class="open-support-modal-btn">Let Us Know</button>
+        </div>
+    </section>
+
+    <!-- Donation Details -->
+    <section class="container">
+        <div class="donation-details">
+            <h2>Donation Details</h2>
+            <div class="bank-info">
+                <strong>Bank Name:</strong> Example Bank Ltd<br>
+                <strong>Account Name:</strong> Ofankor SDA Church<br>
+                <strong>Account Number:</strong> 1234567890<br>
+                <strong>Branch:</strong> Ofankor, Accra
+            </div>
+            <a href="index.html#contact" class="btn">Contact Us for More Ways to Give</a>
+        </div>
+    </section>
+
+    <!-- Thank You Note -->
+    <div id="support-modal" class="support-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Support Us – Tell Us How</h2>
+            <form id="support-form">
+                <label for="support-type">How would you like to support?</label>
+                <select id="support-type" name="support-type" required>
+                    <option value="">Select an option</option>
+                    <option value="donation">Give a Donation</option>
+                    <option value="volunteer">Volunteer</option>
+                    <option value="prayer">Pray With Us</option>
+                    <option value="spread">Spread the Word</option>
+                    <option value="other">Other</option>
+                </select>
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" required>
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" required>
+                <label for="details">Additional Details</label>
+                <textarea id="details" name="details" rows="3"></textarea>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer (same as index.html) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>Ofankor SDA Church is committed to spreading the gospel and serving our community through Christ-centered ministry.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ofankor Seventh-day Adventist Church. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script src="navigation.js"></script>
+    <script>
+        // Modal logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('support-modal');
+            const openBtns = document.querySelectorAll('.open-support-modal-btn');
+            const closeBtn = document.querySelector('.close-modal');
+            if(openBtns.length && modal && closeBtn) {
+                // Attach click handlers to all open buttons (mobile + desktop)
+                openBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        modal.classList.add('active');
+                        document.body.style.overflow = 'hidden'; // Prevent background scroll
+                    });
+                });
+
+                closeBtn.addEventListener('click', () => {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+
+                window.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        modal.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+            // Optional: handle form submission
+            document.getElementById('support-form')?.addEventListener('submit', function(e) {
+                e.preventDefault();
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+                alert('Thank you for your willingness to support! We will contact you soon.');
+                this.reset();
+            });
+        });
+    </script>
+</body>
+</html>

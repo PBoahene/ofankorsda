@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Programs - Ofankor SDA Church</title>
+    <link rel="stylesheet" href="modern-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: #f8f9fa;
+        }
+        .programs-hero {
+            margin-top: 90px; /* push below fixed header */
+            background-image: linear-gradient(rgba(0,128,0,0.6), rgba(0,128,0,0.6)), url('SDA PICS/flier.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 4rem 0 2rem 0;
+            text-align: center;
+        }
+        .programs-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        .programs-hero p {
+            font-size: 1.3rem;
+            font-weight: 400;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .programs-section {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 2rem;
+        }
+        .program-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .program-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 6px 24px rgba(0,128,0,0.13);
+        }
+        .program-card i {
+            font-size: 2.5rem;
+            color: #008000;
+            margin-bottom: 1rem;
+        }
+        .program-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.7rem;
+        }
+        .program-card p {
+            font-size: 1rem;
+            color: #444;
+        }
+        @media (max-width: 600px) {
+            .programs-hero h1 {
+                font-size: 2rem;
+            }
+            .program-card {
+                padding: 1.2rem 0.7rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="SDA%20PICS/badge-script.png" alt="Ofankor SDA Church Logo" class="circular-logo">
+            </div>
+            <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+                <span class="sr-only">Menu</span>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <nav class="nav" id="primary-navigation">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="events.html">EVENTS</a></li>
+                    <li><a href="gallery.html">GALLERY</a></li>
+                    <li><a href="programs.html" class="active">OUR PROGRAMMES</a></li>
+                    <li><a href="index.html#contact">CONTACT</a></li>
+                    <li><a href="news.html">NEWS</a></li>
+                    <li><a href="suppourt.html" class="support-btn">SUPPORT US</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="programs-hero">
+        <h1>Our Programs & Activities</h1>
+        <p>Discover a vibrant calendar of spiritual, educational, and community-focused programs designed to nurture faith, foster fellowship, and serve our community. There’s something for everyone at Ofankor SDA Church!</p>
+    </section>
+    <section class="programs-section">
+        <div class="programs-grid">
+            <div class="program-card">
+                <i class="fas fa-bible"></i>
+                <h3>Bible Study</h3>
+                <p>Deepen your understanding of God's word every Sunday evening with interactive group studies and discussions.</p>
+            </div>
+            <div class="program-card">
+                <i class="fas fa-users"></i>
+                <h3>Youth Fellowship</h3>
+                <p>Empowering the next generation through mentorship, music, outreach, and fun activities every Sabbath afternoon.</p>
+            </div>
+            <div class="program-card">
+                <i class="fas fa-hands-helping"></i>
+                <h3>Community Service</h3>
+                <p>Join us as we reach out to our neighbors with acts of kindness, health screenings, and support for those in need.</p>
+            </div>
+            <div class="program-card">
+                <i class="fas fa-pray"></i>
+                <h3>Prayer Meetings</h3>
+                <p>Experience the power of prayer every Wednesday evening as we intercede for our church, families, and world.</p>
+            </div>
+            <div class="program-card">
+                <i class="fas fa-music"></i>
+                <h3>Music Ministry</h3>
+                <p>Be uplifted by our choirs and praise teams, or join in to share your musical gifts for God’s glory.</p>
+            </div>
+            <div class="program-card">
+                <i class="fas fa-child"></i>
+                <h3>Children’s Ministry</h3>
+                <p>Fun, faith-filled activities and Bible lessons for children of all ages every Sabbath morning.</p>
+            </div>
+            <div class="program-card">
+                <i class="fas fa-heart"></i>
+                <h3>Family Life</h3>
+                <p>Workshops, seminars, and events to strengthen marriages, parenting, and family relationships.</p>
+            </div>
+            <div class="program-card">
+                <i class="fas fa-campground"></i>
+                <h3>Pathfinders & Adventurers</h3>
+                <p>Adventure, leadership, and spiritual growth for children and teens through camping, honors, and service.</p>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>Ofankor SDA Church is committed to spreading the gospel and serving our community through Christ-centered ministry.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ofankor Seventh-day Adventist Church. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="navigation.js"></script>
+</body>
+</html>
